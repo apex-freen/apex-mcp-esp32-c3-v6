@@ -1,0 +1,23 @@
+# ========================================
+# APEX ESP32-C3 v6.0 默认配置
+# ========================================
+
+# 芯片目标
+CONFIG_IDF_TARGET="esp32c3"
+
+# 使用自定义分区表
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# 关闭 factory 分区（使用 OTA 分区）
+CONFIG_PARTITION_TABLE_FILENAME="partitions.csv"
+
+# 主任务栈大小 (C3内存较小，给默认值)
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=3584
+
+# Flash 大小 4MB (C3 常见配置)
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="4MB"
+
+# 关闭不需要的功能以减小固件体积
+CONFIG_COMPILER_OPTIMIZATION_SIZE=y

@@ -1,0 +1,10 @@
+# Name,   Type, SubType, Offset,  Size,     Flags
+# ESP32-C3 4MB Flash 分区表
+nvs,      data, nvs,     ,        0x6000,
+otadata,  data, ota,     ,        0x2000,
+phy_init, data, phy,     ,        0x1000,
+# OTA 固件双区 (C3固件较小，1.5MB 每区够用)
+ota_0,    app,  ota_0,   ,        0x180000,
+ota_1,    app,  ota_1,   ,        0x180000,
+# 业务层文件系统区
+storage,  data, spiffs,  ,        0xD0000,
